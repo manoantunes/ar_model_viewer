@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
+    <title>My first AR.js app</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <!-- Usamos AR.js com a opção sourceType definida para webcam para acesso à câmera -->
-    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
-  </head>
-  <body style='margin: 0px; overflow: hidden;'>
+    <script src="https://raw.githack.com/jeromeetienne/AR.js/3.3.0/aframe/build/aframe-ar.js"></script>
+</head>
+<body style="margin: 0px; overflow: hidden;">
     <a-scene embedded arjs>
-      <!-- Aqui, "seu-modelo-3d.glb" deve ser substituído pelo nome real do seu arquivo de modelo 3D -->
-      <a-assets>
-        <a-asset-item id="model-asset" src="https://github.com/manoantunes/ar_model_viewer/raw/main/Assem3%20-%20Part2-1.glb"></a-asset-item>
-      </a-assets>
-      <a-entity
-        position="0 0 0"
-        scale="0.05 0.05 0.05"
-        gltf-model="#model-asset">
-      </a-entity>
-      <a-entity camera></a-entity>
+        <a-assets>
+            <a-asset-item id="model-asset" src="https://cors-anywhere.herokuapp.com/https://github.com/manoantunes/ar_model_viewer/raw/main/Assem3%20-%20Part2-1.glb"></a-asset-item>
+        </a-assets>
+        <a-marker preset="hiro">
+            <a-entity gltf-model="#model-asset" rotation="0 180 0"></a-entity>
+        </a-marker>
+        <a-entity camera></a-entity>
     </a-scene>
-  </body>
+</body>
 </html>
